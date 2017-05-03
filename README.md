@@ -23,9 +23,11 @@ If all goes well, you only run 2 commands:
 2) sh 00run.sh [hiveserver2:port]
 
 Example to run at scale 100:
-sh 00prepare.sh 100 localhost:10500 localhost druid password
-sh 00run.sh localhost:10500
+
+    sh 00prepare.sh 100 localhost:10500 localhost druid password
+    sh 00run.sh localhost:10500
 
 Example at scale 500:
-sh 00prepare.sh 500 hive.example.com:10500 druid.example.com druid password
-sh 00run.sh hive.example.com:10500
+
+    sh 00prepare.sh 500 hive.example.com:10500 druid.example.com druid password
+    sh 00run.sh hive.example.com:10500
