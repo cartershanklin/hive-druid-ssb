@@ -1,0 +1,9 @@
+Cluster tuning notes:
+
+For our benchmarks, tuning was done to have the workload run in-memory.
+
+Historical node Java arguments were as follows:
+java -server -Xmx12g -Xms12g -XX:NewSize=6g -XX:MaxNewSize=6g -XX:MaxDirectMemorySize=128g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=var/tmp -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -cp conf/_common:conf/historical:lib/*: io.druid.cli.Main server historical
+
+Broker node Java arguments were as follows:
+java -server -Xmx25g -Xms25g -XX:NewSize=6g -XX:MaxNewSize=6g -XX:MaxDirectMemorySize=64g -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Djava.io.tmpdir=var/tmp -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -cp conf/_common:conf/broker:lib/*: io.druid.cli.Main server broker
