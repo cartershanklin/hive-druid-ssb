@@ -1,3 +1,8 @@
+drop table customer;
+drop table dates;
+drop table part;
+drop table supplier;
+drop table lineorder;
 
 CREATE EXTERNAL TABLE `customer`(
   `c_custkey` bigint, 

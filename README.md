@@ -18,16 +18,13 @@ Process:
 * Run a Hive job to convert this "CSV" data into Hive tables
 * Run a Hive job to push pre-aggregated data into Druid. This step may require you to create additional HDFS directories and set permissions if you're not using HDP.
 
-If all goes well, you only run 2 commands:
-1) sh 00prepare.sh [scale] [hiveserver2:port] [overlord] [username] [password]
-2) sh 00run.sh [hiveserver2:port]
+If all goes well, you only run 3 commands:
+1) sh 00datagen.sh [scale] [hiveserver2:port]
+2) sh 00load.sh [scale] [hiveserver2:port] [overlord] [username] [password]
+3) sh 00run.sh [hiveserver2:port]
 
 Example to run at scale 100:
 
-    sh 00prepare.sh 100 localhost:10500 localhost druid password
-    sh 00run.sh localhost:10500
-
-Example at scale 500:
-
-    sh 00prepare.sh 500 hive.example.com:10500 druid.example.com druid password
+    sh 00datagen.sh 100 hive.example.com:10500
+    sh 00load.sh 100 hive.example.com:10500 druid.example.com druid password
     sh 00run.sh hive.example.com:10500
