@@ -5,6 +5,7 @@ set hive.druid.indexer.partition.size.max=1000000;
 set hive.druid.indexer.memory.rownum.max=100000;
 set hive.druid.broker.address.default=${DRUID_HOST}:8082;
 set hive.druid.coordinator.address.default=${DRUID_HOST}:8081;
+set hive.druid.storage.storageDirectory=/apps/hive/warehouse;
 set hive.tez.container.size=1024;
 set hive.druid.passiveWaitTimeMs=180000;
 
